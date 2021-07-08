@@ -19,4 +19,15 @@ function displayDay() {
 
 };
 
+/**
+ * timeblocks
+*/
+
+// TESTING: Adding timeblocks
+
+
+/**
+ * function calls
+*/
+
 displayDay();
