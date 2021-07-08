@@ -1,3 +1,10 @@
+/* basic css reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 /* applied */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -26,9 +33,11 @@ textarea {
 
 /* applied */
 .description {
+  grid-area: middle;
   white-space: pre-wrap;
 }
 
+/* applied */
 .time-block {
   text-align: center;
   border-radius: 15px;
@@ -43,6 +52,7 @@ textarea {
 
 /* applied */
 .hour {
+  grid-area: left;
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
@@ -65,6 +75,7 @@ textarea {
 
 /* applied */
 .saveBtn {
+  grid-area: right;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -80,4 +91,19 @@ textarea {
 /* change button color on hover */
 .saveBtn:hover {
   background-color: #006880;
+}
+
+/* add grid display to container */
+/* .container {
+  display: grid;
+} */
+
+/* add grid display to timeblocks */
+/* specify columsn, rows, and areas */
+.time-block {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "left middle right";
 }
