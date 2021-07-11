@@ -64,6 +64,7 @@ function setTimeBlockTense () {
 
 // checks current hour and sets timeblock tense 
 function updateCalendar () {
+  displayDay();
   getCurrentHour();
   setTimeBlockTense();
   console.log("in updateCalendar function!");
