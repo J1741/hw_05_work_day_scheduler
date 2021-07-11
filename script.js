@@ -15,7 +15,7 @@ var currentHour;
  */
 
 // handles displaying the current day
-function displayDay() {
+function displayDay () {
   // create and format var for current day
   var today = moment().format('dddd[,] MMMM Do');
   console.log(today);
@@ -31,14 +31,14 @@ function displayDay() {
  */
 
 // gets current hour as integer
-function getCurrentHour() {
+function getCurrentHour () {
   currentHour = parseInt(moment().format("HH"), 10);
   console.log("currentHour =", currentHour)
   console.log("----");
 }
 
 // sets each timeblock class to past, present, or future
-function setTimeBlockTense() {
+function setTimeBlockTense () {
   for (var i = 0; i < textAreaEls.length; i++) {    
     var textAreaId = textAreaEls[i].id;
     var textAreaHour = parseInt(textAreaId.slice(11,13), 10);
@@ -62,13 +62,28 @@ function setTimeBlockTense() {
 
 };
 
+// checks current hour and sets timeblock tense 
+function updateCalendar () {
+  getCurrentHour();
+  setTimeBlockTense();
+  console.log("in updateCalendar function!");
+};
+
+// runs update calendar function periodically
+function setTime () {
+  setInterval(updateCalendar, 60000);
+  console.log("in setTime function!");
+} 
+
+
 /*
  * function calls
  */
 
 displayDay();
-getCurrentHour();
-setTimeBlockTense();
+updateCalendar();
+setTime();
+
 
 /*
  * TESTING
