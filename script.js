@@ -4,16 +4,17 @@
 
 // save references to important DOM elements
 var currentDayEl = $('#currentDay');
-var timeBlockEls = $('.time-block');
+var textAreaEls = $('textarea');
 
 // set up global variables
 var currentHour;
 
+
 /*
- * planner header
+ * header
  */
 
-// handle displaying the current day
+// handles displaying the current day
 function displayDay() {
   // create and format var for current day
   var today = moment().format('dddd[,] MMMM Do');
@@ -36,16 +37,29 @@ function getCurrentHour() {
   console.log("----");
 }
 
-// gets timeblock hour as integer
-function getTimeBlockHour() {
-  for (var i = 0; i < timeBlockEls.length; i++) {
-    console.log("timeblock id =", timeBlockEls[i].id);
-    var timeBlockId = timeBlockEls[i].id;
-    var timeBlockHour = parseInt(timeBlockId.slice(11,13), 10);
-    console.log("timeblock hour =", timeBlockHour);
-    console.log("timeblock hour is a:", typeof timeBlockHour);
+// sets each timeblock class to past, present, or future
+function setTimeBlockTense() {
+  for (var i = 0; i < textAreaEls.length; i++) {    
+    var textAreaId = textAreaEls[i].id;
+    var textAreaHour = parseInt(textAreaId.slice(11,13), 10);
+    console.log("textarea hour =", textAreaHour);
+    console.log("current hour =", currentHour);
+
+    if (textAreaHour < currentHour) {
+      console.log(textAreaHour, "is past");
+      textAreaEls[i].classList.add("past");
+    } else if (textAreaHour === currentHour) {
+      console.log(textAreaHour, "is present");
+      textAreaEls[i].classList.add("present");
+    } else {
+      console.log(textAreaHour, "is future");
+      textAreaEls[i].classList.add("future");
+    }
+
     console.log("----");
+
   }
+
 };
 
 /*
@@ -54,8 +68,7 @@ function getTimeBlockHour() {
 
 displayDay();
 getCurrentHour();
-getTimeBlockHour();
-
+setTimeBlockTense();
 
 /*
  * TESTING
