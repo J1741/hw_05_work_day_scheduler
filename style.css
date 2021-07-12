@@ -34,7 +34,14 @@ textarea {
   white-space: pre-wrap;
 }
 
+/* add grid display to timeblocks */
+/* specify grid columns, rows, and areas */
 .time-block {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "left middle right";
   text-align: center;
   border-radius: 15px;
 }
@@ -92,12 +99,3 @@ textarea {
   background-color: #006880;
 }
 
-/* add grid display to timeblocks */
-/* specify grid columns, rows, and areas */
-.time-block {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "left middle right";
-}
