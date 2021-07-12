@@ -5,14 +5,12 @@
   margin: 0;
 }
 
-/* applied */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
 
-/* applied */
 textarea {
   background: transparent;
   border: none;
@@ -22,7 +20,6 @@ textarea {
   padding: 10px;
 }
 
-/* applied */
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -31,26 +28,24 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-/* applied */
+/* place event description in middle grid area */
 .description {
   grid-area: middle;
   white-space: pre-wrap;
 }
 
-/* applied */
 .time-block {
   text-align: center;
   border-radius: 15px;
 }
 
-/* applied */
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
 }
 
-/* applied */
+/* place hour div in left grid area */
 .hour {
   grid-area: left;
   background-color: #ffffff;
@@ -58,22 +53,25 @@ textarea {
   border-top: 1px dashed #000000;
 }
 
+/* use black text in past timeblocks */
 .past {
   background-color: #d3d3d3;
-  color: white;
+  color: #000000;
 }
 
+/* use black text in present timeblocks */
 .present {
   background-color: #ff6961;
-  color: white;
+  color: #000000;
 }
 
+/* use black text in future timeblocks */
 .future {
   background-color: #77dd77;
-  color: white;
+  color: #000000;
 }
 
-/* applied */
+/* place save buttons in right grid area */
 .saveBtn {
   grid-area: right;
   border-left: 1px solid black;
@@ -83,6 +81,7 @@ textarea {
   color: white;
 }
 
+/* remove hover effect */
 /* .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
@@ -93,13 +92,8 @@ textarea {
   background-color: #006880;
 }
 
-/* add grid display to container */
-/* .container {
-  display: grid;
-} */
-
 /* add grid display to timeblocks */
-/* specify columsn, rows, and areas */
+/* specify grid columns, rows, and areas */
 .time-block {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
